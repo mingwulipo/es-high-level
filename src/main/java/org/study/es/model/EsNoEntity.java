@@ -19,6 +19,10 @@ public class EsNoEntity {
 
     @JestId
     private String noName;
+
+    /**
+     * 因为long值太大时，es取出会四舍五入，数据失真，所以用string
+     */
     private String initNo;
     private String currentNo;
 

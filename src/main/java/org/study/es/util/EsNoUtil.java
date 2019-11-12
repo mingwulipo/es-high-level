@@ -33,6 +33,10 @@ public class EsNoUtil {
      * 订单编号
      */
     private static final String ORDER_NO = "order_no";
+    /**
+     * 雪花算法当前生成id为1193737508566913024L，因为时间推移，id越来越大，所以以前id一定比这个小
+     * 最高位+1，1->2，这样生成id和以前的数据都不会重复
+     */
     private static final long ORDER_NO_INIT = 2193737508566913024L;
 
     /**
@@ -110,7 +114,7 @@ public class EsNoUtil {
     }
 
     /**
-     * 生成编号
+     * 生成编号，分布式锁保证并发安全
      * @author lipo
      * @date 2019-11-11 11:10
      */
