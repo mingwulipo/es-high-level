@@ -14,6 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsNoEntity {
+    /**
+     * 索引名称必须全部是小写，所以不能用驼峰命名，只能用下划线了
+     */
     public static final String INDEX = "distribute_no";
     public static final String TYPE = "es";
 
