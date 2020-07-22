@@ -121,8 +121,8 @@ public class EsNoUtil {
     private long nextNo(String noName, String initNo) throws IOException {
         Lock lock = redisLockRegistry.obtain("NO_NAME:" + noName);
 
+        lock.lock();
         try {
-            lock.lock();
 
             //查询数据
             EsNoEntity esNoEntity = getNo(noName);
