@@ -11,7 +11,7 @@ public class EsProperties {
 
     private String host;
 
-    private String port;
+    private Integer port;
 
     private String schema;
 

@@ -17,7 +17,7 @@ public class EsConfig {
     @Bean
     public RestHighLevelClient initClient() {
         RestClientBuilder restClientBuilder = RestClient.builder(
-                new HttpHost(esProperties.getHost(), Integer.valueOf(esProperties.getPort()), esProperties.getSchema()));
+                new HttpHost(esProperties.getHost(), esProperties.getPort(), esProperties.getSchema()));
 
         restClientBuilder.setRequestConfigCallback(
                 requestConfigBuilder -> {
